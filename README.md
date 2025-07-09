@@ -1,3 +1,5 @@
 <div align="center">
-  <img src="resource/README_image.png" alt="Portfolio Banner"/>
+  <a href="https://anasdorbani.com" target="_blank">
+    <img src="resource/README_image.png" alt="Portfolio Banner"/>
+  </a>
 </div>

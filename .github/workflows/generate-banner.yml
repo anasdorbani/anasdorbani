@@ -15,49 +15,49 @@ jobs:
       id-token: write
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
 
-    - name: Install system dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y wkhtmltopdf
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wkhtmltopdf
 
-    - name: Install Python dependencies
-      run: |
-        pip install -r requirements.txt
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
 
-    - name: Generate banner image
-      run: python export_readme.py
+      - name: Generate banner image
+        run: python export_readme.py
 
-    - name: Verify image generation
-      run: |
-        ls -la resource/
-        if [ -f "resource/README_image.png" ]; then
-          echo "✅ Image generated successfully"
-          file resource/README_image.png
-        else
-          echo "❌ Image not found"
-          exit 1
-        fi
+      - name: Verify image generation
+        run: |
+          ls -la resource/
+          if [ -f "resource/README_image.png" ]; then
+            echo "✅ Image generated successfully"
+            file resource/README_image.png
+          else
+            echo "❌ Image not found"
+            exit 1
+          fi
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./resource
-        publish_branch: gh-pages
-        keep_files: false
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./resource
+          publish_branch: gh-pages
+          keep_files: false
 
-    - name: Commit generated image to repository
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add resource/README_image.png
-        git diff --staged --quiet || git commit -m "🤖 Update generated banner image [skip ci]"
-        git push
+      - name: Commit generated image to repository
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add resource/README_image.png
+          git diff --staged --quiet || git commit -m "🤖 Update generated banner image [skip ci]"
+          git push
