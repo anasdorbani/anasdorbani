@@ -52,6 +52,20 @@ Once deployed, your banner will be available at:
 - Update `export_readme.py` to change image dimensions or quality
 - Modify the GitHub Actions workflow for different deployment options
 
+## Troubleshooting
+
+### Common Issues
+1. **wkhtmltoimage options error**: If you get errors about unsupported options, the script uses only basic options that work with most versions
+2. **Image quality**: Adjust the `quality` parameter in `export_readme.py` (0-100)
+3. **Image dimensions**: Modify `width` and `height` in the options dictionary
+
+### Local Testing
+If you encounter issues locally, try:
+```bash
+# Test wkhtmltoimage directly
+wkhtmltoimage --width 1200 --height 630 --quality 100 FullReadme.html test_output.png
+```
+
 ## Benefits
 - **Dynamic**: Updates automatically when you push changes
 - **GitHub-friendly**: Works within GitHub's limitations

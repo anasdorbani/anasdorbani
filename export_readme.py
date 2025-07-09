@@ -17,14 +17,9 @@ if not os.path.exists(html_file_path):
 options = {
     'width': 1200,
     'height': 630,
-    'disable-smart-width': '',
     'quality': 100,
     'format': 'png',
-    'encoding': 'UTF-8',
-    'crop-h': 630,
-    'crop-w': 1200,
-    'crop-x': 0,
-    'crop-y': 0
+    'encoding': 'UTF-8'
 }
 
 try:
