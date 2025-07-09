@@ -8,7 +8,9 @@ PhD student at Polytechnique Montreal focused on multimodal data integration, an
 
 <br/><br/>
 
-[![✨ EXPLORE MY PORTFOLIO →](https://img.shields.io/badge/EXPLORE%20MY%20PORTFOLIO-anasdorbani.com-blueviolet?style=for-the-badge&logo=starship&logoColor=white)](https://anasdorbani.com)
+<a href="https://anasdorbani.com" target="_blank">
+  <img src="https://img.shields.io/badge/EXPLORE%20MY%20PORTFOLIO-anasdorbani.com-cyan?style=for-the-badge&logo=starship&logoColor=cyan" alt="EXPLORE MY PORTFOLIO"/>
+</a>
 
 <br/><br/>
 
