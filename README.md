@@ -1,8 +1,7 @@
 
+<div align="center">
 
-<div align="center" style="max-width: 500px; margin: 0 auto;">
-
-# 👋 Hey There! I'm ANAS
+# 👋 Hey There! I'm ANAS 😁
 <br/>
 <br/>
 PhD student at Polytechnique Montreal focused on multimodal data integration, and next-gen intelligent data systems.
