@@ -41,8 +41,8 @@ with open(temp_html_path, 'w') as file:
 
 # Options for better image generation
 options = {
-    'width': 1200,
-    'height': 630,
+    'width': 800,
+    'height': 1200,
     'quality': 100,
     'format': 'png',
     'encoding': 'UTF-8'
