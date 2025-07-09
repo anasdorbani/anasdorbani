@@ -45,7 +45,10 @@ brew install wkhtmltopdf
 
 ## Image URL
 Once deployed, your banner will be available at:
-`https://anasdorbani.github.io/anasdorbani/README_image.png`
+- **Primary**: `https://anasdorbani.github.io/anasdorbani/README_image.png` (GitHub Pages)
+- **Fallback**: `./resource/README_image.png` (committed to repository)
+
+The README.md is configured to use the GitHub Pages URL first, with automatic fallback to the committed image if needed.
 
 ## Customization
 - Edit `FullReadme.html` to modify the banner content and styling

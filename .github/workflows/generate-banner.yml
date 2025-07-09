@@ -9,6 +9,10 @@ on:
 jobs:
   generate-banner:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
 
     steps:
     - name: Checkout repository
@@ -31,6 +35,17 @@ jobs:
     - name: Generate banner image
       run: python export_readme.py
 
+    - name: Verify image generation
+      run: |
+        ls -la resource/
+        if [ -f "resource/README_image.png" ]; then
+          echo "✅ Image generated successfully"
+          file resource/README_image.png
+        else
+          echo "❌ Image not found"
+          exit 1
+        fi
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
@@ -38,3 +53,11 @@ jobs:
         publish_dir: ./resource
         publish_branch: gh-pages
         keep_files: false
+
+    - name: Commit generated image to repository
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add resource/README_image.png
+        git diff --staged --quiet || git commit -m "🤖 Update generated banner image [skip ci]"
+        git push
