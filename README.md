@@ -1,5 +1,6 @@
 
-<div align="center">
+
+<div align="center" style="max-width: 500px; margin: 0 auto;">
 
 # 👋 Hey There! I'm ANAS
 <br/>
